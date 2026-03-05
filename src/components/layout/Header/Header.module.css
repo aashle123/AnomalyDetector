@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap');
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 84px;
+    padding: 42px 38px 24px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: transparent;
+    overflow: visible;
+}
+
+.headerScrolled {
+    /* No background change - keep transparent */
+}
+
+/* Nav Container with SVG Shape */
+.navContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: visible;
+    opacity: 0;
+    animation: fadeSlideDown 1.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+}
+
+.navInner {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 24px;
+    overflow: visible;
+}
+
+/* Black bar at top */
+.navTopBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: #000;
+    z-index: 1;
+}
+
+/* Main nav shape - SVG trapezoid */
+.navShape {
+    position: relative;
+    width: 269px;
+    height: 70px;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 269 70'%3E%3Cpath d='M 0 0 L 0 23.5 L 27.01 23.846 C 32.817 23.846 38.387 26.208 42.495 31.088 L 61.231 62.5 C 65.337 67.384 70.907 70.002 76.714 70 L 192.286 70 C 198.093 70 203.661 67.38 207.769 62.5 L 226.505 31.088 C 230.611 26.203 236.183 23.845 241.99 23.846 L 269 23.5 L 269 0 L 134.763 0 Z' fill='rgb(0, 0, 0)'/%3E%3C/svg%3E");
+}
+
+/* Rounded corner decorations */
+.roundedEdgeLeft {
+    position: absolute;
+    left: 18px;
+    top: 32.9px;
+    transform: translateY(-50%) rotate(90deg);
+    width: 18px;
+    height: 18px;
+    z-index: 1;
+    overflow: visible;
+}
+
+.roundedEdgeLeft::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 19'%3E%3Cpath d='M 0.499 18.497 L 19 18 C 9.059 18 1 9.941 1 0 Z' fill='rgb(0, 0, 0)'/%3E%3C/svg%3E");
+}
+
+.roundedEdgeLeft::after {
+    content: '';
+    position: absolute;
+    width: 31px;
+    height: 24px;
+    top: 18px;
+    left: -1px;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31 24'%3E%3Cpath d='M 0 0 L 17 0 C 24.732 0 31 6.268 31 14 L 31 24 L 0 24 Z' fill='rgb(0, 0, 0)'/%3E%3C/svg%3E");
+}
+
+.roundedEdgeRight {
+    position: absolute;
+    right: 18px;
+    top: 32.9px;
+    transform: translateY(-50%) rotate(90deg);
+    width: 18px;
+    height: 18px;
+    z-index: 1;
+    overflow: visible;
+}
+
+.roundedEdgeRight::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 18px;
+    left: -1px;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 18'%3E%3Cpath d='M 0.499 -0.003 L 19 0 C 9.059 0 1 8.059 1 18 Z' fill='rgb(0, 0, 0)'/%3E%3C/svg%3E");
+}
+
+.roundedEdgeRight::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -24px;
+    left: -1px;
+    right: -14px;
+    background: #000;
+    border-bottom-right-radius: 14px;
+}
+
+/* Logo - Centered */
+.logo {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Unbounded', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(200, 199, 201);
+    letter-spacing: 1.82px;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 3;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #fff;
+}
+
+/* Hamburger Menu Button - Right side */
+.mobileMenuBtn {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    width: 34px;
+    height: 18px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeSlideDown 1.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
+}
+
+.menuBar {
+    height: 2px;
+    background: rgb(200, 199, 201);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+}
+
+.menuBar:nth-child(1) {
+    width: 34px;
+}
+
+.menuBar:nth-child(2) {
+    width: 26px;
+}
+
+.menuBar:nth-child(3) {
+    width: 26px;
+}
+
+.mobileMenuBtn:hover .menuBar {
+    background: #fff;
+}
+
+/* Close button state */
+.mobileMenuBtnOpen .menuBar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    width: 26px;
+}
+
+.mobileMenuBtnOpen .menuBar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.mobileMenuBtnOpen .menuBar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 26px;
+}
+
+/* Full Screen Menu Overlay */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.mobileMenuOpen {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menuContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 40px 40px;
+}
+
+.menuNav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.menuNavItem {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menuNavItem:hover {
+    padding-left: 20px;
+}
+
+.menuNavItem:hover .menuNavText {
+    color: #fff;
+}
+
+.menuNavNumber {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+    letter-spacing: 0.1em;
+    min-width: 30px;
+}
+
+.menuNavText {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgb(200, 199, 201);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .menuNavText {
+        font-size: 48px;
+    }
+}
+
+.menuNavPlus {
+    margin-left: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: rgb(100, 100, 100);
+    transition: color 0.3s ease;
+}
+
+.menuNavItem:hover .menuNavPlus {
+    color: #fff;
+}
+
+.menuFooter {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+}
+
+.menuFooterLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: rgb(200, 199, 201);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menuFooterLink:hover {
+    color: #fff;
+}
+
+.menuFooterLink::before {
+    content: '+';
+}
+
+/* Animations */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo animation needs separate handling for translateX */
+.logo {
+    opacity: 0;
+    animation: logoFadeIn 1.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Hide desktop nav - we're using hamburger for all */
+.nav {
+    display: none;
+}
+
+.actions {
+    display: none;
+}
+
+.headerContent {
+    display: none;
+}
+
+.loginBtn,
+.signupBtn,
+.navLink,
+.navLinkActive {
+    display: none;
+}

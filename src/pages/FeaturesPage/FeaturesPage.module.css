@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400&family=Inter:wght@200;400;500&display=swap');
+
+/* Features Page - Janis Sne Inspired */
+.features {
+    background: #000;
+    min-height: 100vh;
+}
+
+/* ==================== */
+/* HERO SECTION */
+/* ==================== */
+
+.heroSection {
+    min-height: 100vh;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+}
+
+.heroCard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.heroMedia {
+    flex: 1;
+    min-height: 400px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.heroMediaInner {
+    position: absolute;
+    width: 102%;
+    height: calc(100% + 20px);
+    top: -10px;
+    left: -1%;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.heroGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    z-index: 0;
+}
+
+.heroInfo {
+    width: 100%;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 3;
+    border-top-right-radius: 48px;
+}
+
+.heroTextContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.heroPlus {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    color: rgb(215, 212, 217);
+    line-height: 24px;
+    padding: 4px 0 2px;
+    margin: 0;
+}
+
+.heroTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(215, 212, 217);
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .heroTitle {
+        font-size: 30px;
+    }
+}
+
+.heroDescription {
+    max-width: 600px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(168, 166, 171);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    text-align: justify;
+    margin: 0;
+}
+
+/* ==================== */
+/* FEATURE CARDS - STICKY SCROLL */
+/* ==================== */
+
+.featureCard {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    z-index: 1;
+    scroll-margin-top: 2px;
+}
+
+.featureCard:nth-child(1) {
+    z-index: 1;
+}
+
+.featureCard:nth-child(2) {
+    z-index: 2;
+}
+
+.featureCard:nth-child(3) {
+    z-index: 3;
+}
+
+.featureCard:nth-child(4) {
+    z-index: 4;
+}
+
+.featureCard:nth-child(5) {
+    z-index: 5;
+}
+
+.featureCard:nth-child(6) {
+    z-index: 6;
+}
+
+.featureCard:nth-child(7) {
+    z-index: 7;
+}
+
+.cardInner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cardMedia {
+    flex: 1;
+    min-height: 350px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.cardMediaInner {
+    position: absolute;
+    width: 102%;
+    height: calc(100% + 20px);
+    top: -10px;
+    left: -1%;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.cardMedia:hover .cardImage {
+    transform: scale(1.02);
+}
+
+.cardGradient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* Different gradient for each feature */
+.featureCard:nth-child(1) .cardGradient {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.featureCard:nth-child(2) .cardGradient {
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.featureCard:nth-child(3) .cardGradient {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 50%, #1a1a2e 100%);
+}
+
+.featureCard:nth-child(4) .cardGradient {
+    background: linear-gradient(135deg, #1e1e3f 0%, #2d2d5a 50%, #1a1a4e 100%);
+}
+
+.featureCard:nth-child(5) .cardGradient {
+    background: linear-gradient(135deg, #1a3a4e 0%, #0f4060 50%, #163e4e 100%);
+}
+
+.featureCard:nth-child(6) .cardGradient {
+    background: linear-gradient(135deg, #2e1a3e 0%, #3e1650 50%, #4e0f40 100%);
+}
+
+.featureCard:nth-child(7) .cardGradient {
+    background: linear-gradient(135deg, #0a2540 0%, #0f3460 50%, #1a4a6e 100%);
+}
+
+.cardInfo {
+    width: 100%;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 3;
+    border-top-right-radius: 48px;
+}
+
+.cardTextContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cardPlus {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    color: rgb(215, 212, 217);
+    line-height: 24px;
+    padding: 4px 0 2px;
+    margin: 0;
+}
+
+.cardTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(215, 212, 217);
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .cardTitle {
+        font-size: 30px;
+    }
+}
+
+.cardDescription {
+    max-width: 550px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(168, 166, 171);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    text-align: justify;
+    margin: 0;
+}
+
+/* ==================== */
+/* BENEFITS LIST */
+/* ==================== */
+
+.benefitsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefitCheck {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: rgb(100, 200, 150);
+}
+
+.benefitText {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(168, 166, 171);
+    margin: 0;
+}
+
+/* ==================== */
+/* COMPARISON SECTION */
+/* ==================== */
+
+.comparisonSection {
+    min-height: 100vh;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+}
+
+.comparisonCard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 24px;
+}
+
+.comparisonHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.comparisonPlus {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    color: rgb(215, 212, 217);
+    line-height: 24px;
+    margin: 0;
+}
+
+.comparisonTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(215, 212, 217);
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .comparisonTitle {
+        font-size: 30px;
+    }
+}
+
+/* Table Styles */
+.comparisonTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.comparisonTable th {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.comparisonTable td {
+    font-size: 14px;
+    color: rgb(168, 166, 171);
+}
+
+.comparisonTable tr:last-child td {
+    border-bottom: none;
+}
+
+.highlight {
+    color: rgb(215, 212, 217) !important;
+    font-weight: 500;
+}
+
+.checkMark {
+    color: rgb(100, 200, 150);
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.crossMark {
+    color: rgb(200, 100, 100);
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+/* ==================== */
+/* LINK STYLES */
+/* ==================== */
+
+.cardLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px;
+    text-decoration: none;
+    backdrop-filter: blur(33px);
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 16px;
+}
+
+.cardLink:hover .cardLinkText {
+    color: #fff;
+}
+
+.dotsIcon {
+    position: relative;
+    width: 12px;
+    height: 12px;
+}
+
+.dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgb(235, 232, 237);
+    transition: all 0.3s ease;
+}
+
+.dot:nth-child(1) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.dot:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot:nth-child(3) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.dot:nth-child(4) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cardLink:hover .dot {
+    background: #fff;
+}
+
+.cardLinkText {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(168, 166, 171);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}

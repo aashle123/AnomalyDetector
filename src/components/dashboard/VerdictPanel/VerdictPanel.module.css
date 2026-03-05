@@ -1,0 +1,201 @@
+.pendingPanel {
+    background: var(--dashboard-surface);
+    border: 1px dashed var(--dashboard-border);
+    padding: var(--spacing-2xl);
+    border-radius: 8px;
+    font-family: var(--font-display);
+    color: var(--dashboard-text-muted);
+    font-size: var(--text-lg);
+    letter-spacing: 0.1em;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pendingText {
+    opacity: 0.5;
+}
+
+.panel {
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contextual Themes */
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.normal {
+    border-color: var(--color-normal);
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.05);
+}
+
+.normal::before {
+    background: var(--color-normal);
+}
+
+.normal .icon {
+    color: var(--color-normal);
+}
+
+.normal .progressFill {
+    background: var(--color-normal);
+}
+
+.anomaly {
+    border-color: var(--color-anomaly);
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.08);
+}
+
+.anomaly::before {
+    background: var(--color-anomaly);
+}
+
+.anomaly .icon {
+    color: var(--color-anomaly);
+}
+
+.anomaly .progressFill {
+    background: var(--color-anomaly);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.verdictTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--dashboard-text);
+}
+
+/* Confidence ProgressBar */
+.confidenceSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.confidenceLabel {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--dashboard-text-secondary);
+}
+
+.progressBar {
+    height: 4px;
+    background: var(--dashboard-border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Explainability (Z-Scores) */
+.explainabilitySection {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--dashboard-border);
+}
+
+.explainabilityHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--dashboard-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.zScoreList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.zScoreItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dashed var(--dashboard-border);
+}
+
+.zScoreItem:last-child {
+    border-bottom: none;
+}
+
+.zScoreKey {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    text-transform: capitalize;
+}
+
+.zScoreValue {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--dashboard-text);
+    background: var(--dashboard-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.zScoreHigh {
+    color: var(--color-anomaly);
+    background: var(--color-anomaly-bg);
+}
+
+@media (max-width: 480px) {
+    .verdictTitle {
+        font-size: var(--text-xl);
+    }
+    .pendingPanel {
+        min-height: 160px;
+    }
+}

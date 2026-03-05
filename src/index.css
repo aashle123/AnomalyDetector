@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Existing Landing Page Colors (Dark Theme) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --primary-500: #3b82f6;
+  --accent-500: #2dd4bf;
+
+  /* Dashboard Clinical Editorial Theme (Bright White) */
+  --dashboard-bg: #F8FAFC;
+  --dashboard-surface: #FFFFFF;
+  --dashboard-border: #E2E8F0;
+
+  --dashboard-text: #0F172A;
+  --dashboard-text-secondary: #475569;
+  --dashboard-text-muted: #94A3B8;
+
+  --color-normal: #059669;
+  /* Dusty emerald */
+  --color-normal-bg: #ECFDF5;
+  --color-anomaly: #DC2626;
+  /* Terracotta red */
+  --color-anomaly-bg: #FEF2F2;
+
+  --color-primary: #0F172A;
+  /* Slate 900 */
+  --color-primary-hover: #1E293B;
+
+  /* Typography System */
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'Space Grotesk', monospace;
+  /* Used for numbers/data */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  /* Defaults to landing page dark */
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global resets for elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

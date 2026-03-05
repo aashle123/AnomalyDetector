@@ -1,0 +1,15 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #000;
+}
+
+.main {
+    flex: 1;
+    /* No padding-top - hero is full viewport */
+}
+
+.mainNoPadding {
+    padding-top: 0;
+}

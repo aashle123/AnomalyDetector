@@ -1,0 +1,226 @@
+.page {
+    width: 100%;
+    max-width: 680px;
+}
+
+/* Page Header */
+.pageHeader {
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--dashboard-border);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--dashboard-text);
+    letter-spacing: -0.02em;
+}
+
+/* Sections */
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--dashboard-text-muted);
+    white-space: nowrap;
+}
+
+.headerLine {
+    flex: 1;
+    height: 1px;
+    background-color: var(--dashboard-border);
+}
+
+/* Summary Card */
+.summaryCard {
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+}
+
+.summaryCount {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.countNumber {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--dashboard-text);
+    letter-spacing: -0.03em;
+}
+
+.countLabel {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    font-weight: 500;
+}
+
+.summaryDesc {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-muted);
+    line-height: 1.6;
+}
+
+/* Skeleton for count */
+@keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.countSkeleton {
+    display: inline-block;
+    width: 64px;
+    height: 36px;
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--dashboard-border) 25%,
+        var(--dashboard-bg-subtle) 50%,
+        var(--dashboard-border) 75%
+    );
+    background-size: 400px 100%;
+    animation: shimmer 1.4s infinite linear;
+}
+
+/* Download Card */
+.downloadCard {
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.downloadInfo {
+    flex: 1;
+}
+
+.downloadTitle {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--dashboard-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.downloadDesc {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    line-height: 1.6;
+}
+
+.downloadBtn {
+    align-self: flex-start;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--color-primary);
+    color: var(--dashboard-surface);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.downloadBtn:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.downloadBtn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.downloadBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.errorMsg {
+    font-size: var(--text-sm);
+    color: var(--color-anomaly);
+    font-weight: 500;
+}
+
+.emptyNote {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-muted);
+    font-style: italic;
+}
+
+/* About Card */
+.aboutCard {
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.aboutItem {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.aboutDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dashboard-border);
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.aboutItemTitle {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--dashboard-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.aboutItemDesc {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .page {
+        max-width: 100%;
+    }
+
+    .pageTitle {
+        font-size: var(--text-2xl);
+    }
+
+    .downloadBtn {
+        align-self: stretch;
+        text-align: center;
+    }
+}

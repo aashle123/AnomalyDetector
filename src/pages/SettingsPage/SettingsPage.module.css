@@ -1,0 +1,224 @@
+.page {
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Page Header */
+.pageHeader {
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--dashboard-border);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--dashboard-text);
+    letter-spacing: -0.02em;
+}
+
+/* Sections */
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--dashboard-text-muted);
+    white-space: nowrap;
+}
+
+.headerLine {
+    flex: 1;
+    height: 1px;
+    background-color: var(--dashboard-border);
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--dashboard-text-secondary);
+    text-transform: uppercase;
+}
+
+.input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--dashboard-text);
+    transition: border-color 0.15s ease;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+}
+
+.input::placeholder {
+    color: var(--dashboard-text-muted);
+}
+
+.readonlyField {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--dashboard-bg-subtle);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 6px;
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    cursor: default;
+    user-select: all;
+}
+
+.monoField {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--dashboard-text-muted);
+}
+
+/* Form Footer */
+.formFooter {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    padding-top: var(--spacing-sm);
+}
+
+.saveBtn {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: var(--color-primary);
+    color: var(--dashboard-surface);
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.saveBtn:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+}
+
+.saveBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Messages */
+.successMsg {
+    font-size: var(--text-sm);
+    color: var(--color-normal);
+    font-weight: 500;
+}
+
+.errorMsg {
+    font-size: var(--text-sm);
+    color: var(--color-anomaly);
+    font-weight: 500;
+}
+
+/* Danger Zone */
+.dangerZone {
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    background: rgba(239, 68, 68, 0.02);
+}
+
+.dangerTitle {
+    color: var(--color-anomaly);
+}
+
+.dangerContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.dangerInfo {
+    flex: 1;
+}
+
+.dangerLabel {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--dashboard-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.dangerDescription {
+    font-size: var(--text-sm);
+    color: var(--dashboard-text-secondary);
+    line-height: 1.5;
+}
+
+.dangerBtn {
+    flex-shrink: 0;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    color: var(--color-anomaly);
+    border: 1px solid var(--color-anomaly);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.dangerBtn:hover {
+    background: var(--color-anomaly);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .page {
+        max-width: 100%;
+    }
+
+    .dangerContent {
+        flex-direction: column;
+    }
+
+    .dangerBtn {
+        align-self: flex-start;
+    }
+
+    .pageTitle {
+        font-size: var(--text-2xl);
+    }
+}

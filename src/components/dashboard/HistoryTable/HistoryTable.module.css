@@ -1,0 +1,179 @@
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    text-align: left;
+}
+
+.table th {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--dashboard-text-muted);
+    text-transform: uppercase;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.row {
+    border-bottom: 1px dashed var(--dashboard-border);
+    transition: background-color 0.2s ease;
+}
+
+.row:hover {
+    background-color: var(--dashboard-bg-subtle);
+}
+
+.table td {
+    padding: var(--spacing-md);
+    vertical-align: middle;
+}
+
+.timeCell {
+    font-family: var(--font-mono);
+    color: var(--dashboard-text-secondary);
+    font-size: var(--text-xs);
+    white-space: nowrap;
+}
+
+.metricCell {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--dashboard-text);
+}
+
+.verdictCell {
+    white-space: nowrap;
+}
+
+.verdictBadge {
+    display: inline-flex;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.badgeNormal {
+    background: var(--color-normal-bg);
+    color: var(--color-normal);
+}
+
+.badgeAnomaly {
+    background: var(--color-anomaly-bg);
+    color: var(--color-anomaly);
+}
+
+.actionCell {
+    text-align: right;
+    width: 80px;
+}
+
+.viewBtn {
+    background: transparent;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--dashboard-text-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.viewBtn:hover {
+    color: var(--dashboard-text);
+}
+
+.emptyTable {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    font-family: var(--font-display);
+    color: var(--dashboard-text-muted);
+    font-size: var(--text-lg);
+    letter-spacing: 0.1em;
+    border: 1px dashed var(--dashboard-border);
+    border-radius: 8px;
+}
+
+/* Mobile: hide table, show card stack */
+@media (max-width: 639px) {
+    .tableContainer {
+        display: none;
+    }
+    .cardStack {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Desktop: hide card stack, show table */
+@media (min-width: 640px) {
+    .cardStack {
+        display: none;
+    }
+}
+
+.mobileCard {
+    background: var(--dashboard-surface);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 8px;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.mobileCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.mobileCardTime {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--dashboard-text-muted);
+}
+
+.mobileCardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+
+.mobileMetric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mobileMetricLabel {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dashboard-text-muted);
+}
+
+.mobileMetricValue {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--dashboard-text);
+}
+
+.mobileCardFooter {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px dashed var(--dashboard-border);
+    display: flex;
+    justify-content: flex-end;
+}
