@@ -8,6 +8,8 @@ import AboutPage from '../pages/AboutPage';
 import FeaturesPage from '../pages/FeaturesPage';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
+import ForgotPasswordPage from '../pages/ForgotPasswordPage';
+import ResetPasswordPage from '../pages/ResetPasswordPage';
 import ContactPage from '../pages/ContactPage';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import DashboardPage from '../pages/DashboardPage';
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
     {
         path: '/signup',
         element: <SignupPage />,
+    },
+    {
+        path: '/forgot-password',
+        element: <ForgotPasswordPage />,
+    },
+    {
+        path: '/reset-password',
+        element: <ResetPasswordPage />,
     },
     // Protected Dashboard routes
     {

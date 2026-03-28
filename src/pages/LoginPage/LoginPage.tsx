@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Activity, Github, Mail } from 'lucide-react';
+import { Activity } from 'lucide-react';
 import styles from './LoginPage.module.css';
 import { useAuth } from '../../hooks';
 
@@ -84,21 +84,6 @@ export function LoginPage() {
                         {submitting ? 'SIGNING IN...' : 'SIGN IN'}
                     </button>
                 </form>
-
-                <div className={styles.divider}>
-                    <span className={styles.dividerLine}></span>
-                    <span className={styles.dividerText}>or continue with</span>
-                    <span className={styles.dividerLine}></span>
-                </div>
-
-                <div className={styles.socialButtons}>
-                    <button type="button" className={styles.socialBtn}>
-                        <Mail size={18} /> Google
-                    </button>
-                    <button type="button" className={styles.socialBtn}>
-                        <Github size={18} /> GitHub
-                    </button>
-                </div>
 
                 <p className={styles.authFooter}>
                     Don't have an account?{' '}
